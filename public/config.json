@@ -1,24 +1,24 @@
 {
     "workflowApiVersion": "1.1",
     "metaData": {
-       "icon": "images/iconSmall.png",
-       "category": "message"
+        "icon": "images/iconSmall.png",
+        "category": "message"
     },
     "type": "REST",
     "lang": {
-       "en-US": {
-           "name": "Twilio SMS",
-           "description": "Send Twilio SMS with Journey Builder",
-           "TwilioMessage":"test"
-       }
+        "en-US": {
+            "name": "Blip",
+            "description": "Send Active Message in Blip platform",
+            "TwilioMessage": "test"
+        }
     },
     "arguments": {
         "execute": {
             "inArguments": [
                 {
-                  "email": "{{Contact.Default.EmailAddress}}",
-                  "to": "{{Contact.Attribute.TwilioV1.TwilioNumber}}" 
-                }               
+                    "email": "{{Contact.Default.EmailAddress}}",
+                    "to": "{{Contact.Default.PhoneNumber}}"
+                }
             ],
             "outArguments": [],
             "url": "https://sfmc-carbel-a386749f8d73.herokuapp.com/journeybuilder/execute",
@@ -30,49 +30,52 @@
         }
     },
     "configurationArguments": {
-      "applicationExtensionKey": "e962d1d4-8b07-4e76-89be-ecd1f1423b6d",
-       "save": {
-           "url": "https://sfmc-carbel-a386749f8d73.herokuapp.com/save",
+        "applicationExtensionKey": "e962d1d4-8b07-4e76-89be-ecd1f1423b6d",
+        "save": {
+            "url": "https://sfmc-carbel-a386749f8d73.herokuapp.com/save",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false,
             "timeout": 2000
-       },
-       "publish": {
-           "url": "https://sfmc-carbel-a386749f8d73.herokuapp.com/publish",
+        },
+        "publish": {
+            "url": "https://sfmc-carbel-a386749f8d73.herokuapp.com/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false,
             "timeout": 2000
-       },
-       "validate": {
-           "url": "https://sfmc-carbel-a386749f8d73.herokuapp.com/validate",
+        },
+        "validate": {
+            "url": "https://sfmc-carbel-a386749f8d73.herokuapp.com/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false,
             "timeout": 2000
-       },
-       "stop": {
-           "url": "https://sfmc-carbel-a386749f8d73.herokuapp.com/stop",
+        },
+        "stop": {
+            "url": "https://sfmc-carbel-a386749f8d73.herokuapp.com/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
             "useJwt": false,
             "timeout": 2000
-       }
+        }
     },
     "wizardSteps": [
-       { "label": "Create SMS Message", "key": "step1" }
+        {
+            "label": "Create SMS Message",
+            "key": "step1"
+        }
     ],
     "userInterfaces": {
-       "configModal": {
-           "height": 600,
-           "width": 800,
-           "fullscreen": false
-       }
+        "configModal": {
+            "height": 600,
+            "width": 800,
+            "fullscreen": false
+        }
     },
     "schema": {
         "arguments": {
@@ -82,37 +85,37 @@
                         "accountSid": {
                             "dataType": "String",
                             "isNullable": false,
-                            "direction": "out"   
+                            "direction": "out"
                         }
-                    },                    
+                    },
                     {
                         "authToken": {
                             "dataType": "String",
                             "isNullable": false,
-                            "direction": "out"   
+                            "direction": "out"
                         }
-                    },                    
+                    },
                     {
                         "from": {
                             "dataType": "Phone",
                             "isNullable": true,
-                            "direction": "out"   
+                            "direction": "out"
                         }
-                    },                    
+                    },
                     {
                         "to": {
                             "dataType": "Phone",
                             "isNullable": false,
-                            "direction": "out"   
+                            "direction": "out"
                         }
                     },
                     {
                         "body": {
                             "dataType": "String",
                             "isNullable": false,
-                            "direction": "out"   
+                            "direction": "out"
                         }
-                    },                    
+                    },
                     {
                         "email": {
                             "dataType": "Email",
