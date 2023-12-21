@@ -1,128 +1,117 @@
 {
-    "workflowApiVersion": "1.1",
-    "metaData": {
-       "icon": "images/iconSmall.png",
-       "category": "message"
-    },
-    "type": "REST",
-    "lang": {
-       "en-US": {
-           "name": "Twilio SMS",
-           "description": "Send Twilio SMS with Journey Builder",
-           "TwilioMessage":"test"
-       }
-    },
-    "arguments": {
-        "execute": {
-            "inArguments": [
-                {
-                  "email": "{{Contact.Default.EmailAddress}}",
-                  "to": "{{Contact.Attribute.TwilioV1.TwilioNumber}}" 
-                }               
-            ],
-            "outArguments": [],
-            "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/execute",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false,
-            "timeout": 2000
-        }
-    },
-    "configurationArguments": {
-      "applicationExtensionKey": "e962d1d4-8b07-4e76-89be-ecd1f1423b6d",
-       "save": {
-           "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/save",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false,
-            "timeout": 2000
-       },
-       "publish": {
-           "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/publish",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false,
-            "timeout": 2000
-       },
-       "validate": {
-           "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/validate",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false,
-            "timeout": 2000
-       },
-       "stop": {
-           "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/stop",
-            "verb": "POST",
-            "body": "",
-            "format": "json",
-            "useJwt": false,
-            "timeout": 2000
-       }
-    },
-    "wizardSteps": [
-       { "label": "Create SMS Message", "key": "step1" }
-    ],
-    "userInterfaces": {
-       "configModal": {
-           "height": 600,
-           "width": 800,
-           "fullscreen": false
-       }
-    },
-    "schema": {
-        "arguments": {
-            "execute": {
-                "inArguments": [
-                    {
-                        "accountSid": {
-                            "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"   
-                        }
-                    },                    
-                    {
-                        "authToken": {
-                            "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"   
-                        }
-                    },                    
-                    {
-                        "from": {
-                            "dataType": "Phone",
-                            "isNullable": true,
-                            "direction": "out"   
-                        }
-                    },                    
-                    {
-                        "to": {
-                            "dataType": "Phone",
-                            "isNullable": false,
-                            "direction": "out"   
-                        }
-                    },
-                    {
-                        "body": {
-                            "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"   
-                        }
-                    },                    
-                    {
-                        "email": {
-                            "dataType": "Email",
-                            "isNullable": true,
-                            "direction": "out"
-                        }
-                    }
-                ],
-                "outArguments": []
-            }
-        }
+  "workflowApiVersion": "1.1",
+  "metaData": {
+    "icon": "images/iconSmall.png",
+    "category": "message"
+  },
+  "type": "REST",
+  "lang": {
+    "en-US": {
+      "name": "Blip",
+      "description": "Send Active Message in Blip platform",
+      "TwilioMessage": "test"
     }
+  },
+  "arguments": {
+    "execute": {
+      "inArguments": [
+        {
+          "email": "{{Contact.Default.EmailAddress}}",
+          "to": "{{Contact.Attribute.TwilioV1.TwilioNumber}}"
+        }
+      ],
+      "outArguments": [],
+      "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/execute",
+      "verb": "POST",
+      "body": "",
+      "format": "json",
+      "useJwt": false,
+      "timeout": 2000
+    }
+  },
+  "configurationArguments": {
+    "applicationExtensionKey": "e962d1d4-8b07-4e76-89be-ecd1f1423b6d",
+    "save": {
+      "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/save",
+      "verb": "POST",
+      "body": "",
+      "format": "json",
+      "useJwt": false,
+      "timeout": 2000
+    },
+    "publish": {
+      "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/publish",
+      "verb": "POST",
+      "body": "",
+      "format": "json",
+      "useJwt": false,
+      "timeout": 2000
+    },
+    "validate": {
+      "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/validate",
+      "verb": "POST",
+      "body": "",
+      "format": "json",
+      "useJwt": false,
+      "timeout": 2000
+    },
+    "stop": {
+      "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/stop",
+      "verb": "POST",
+      "body": "",
+      "format": "json",
+      "useJwt": false,
+      "timeout": 2000
+    }
+  },
+  "wizardSteps": [
+    {
+      "label": "Configure Extension",
+      "key": "step1"
+    }
+  ],
+  "userInterfaces": {
+    "configModal": {
+      "height": 600,
+      "width": 800,
+      "fullscreen": false
+    }
+  },
+  "schema": {
+    "arguments": {
+      "execute": {
+        "inArguments": [
+          {
+            "messageTemplate": {
+              "dataType": "String",
+              "isNullable": false,
+              "direction": "out"
+            }
+          },
+          {
+            "apiKey": {
+              "dataType": "String",
+              "isNullable": false,
+              "direction": "out"
+            }
+          },
+          {
+            "to": {
+              "dataType": "Phone",
+              "isNullable": false,
+              "direction": "out"
+            }
+          },
+          {
+            "email": {
+              "dataType": "Email",
+              "isNullable": true,
+              "direction": "out"
+            }
+          }
+        ],
+        "outArguments": []
+      }
+    }
+  }
 }
