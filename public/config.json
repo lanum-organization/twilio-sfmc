@@ -66,7 +66,7 @@
     },
     "wizardSteps": [
         {
-            "label": "Create SMS Message",
+            "label": "Configure Extension",
             "key": "step1"
         }
     ],
@@ -82,14 +82,14 @@
             "execute": {
                 "inArguments": [
                     {
-                        "accountSid": {
+                        "messageTemplate": {
                             "dataType": "String",
                             "isNullable": false,
                             "direction": "out"
                         }
                     },
                     {
-                        "authToken": {
+                        "apiKey": {
                             "dataType": "String",
                             "isNullable": false,
                             "direction": "out"
@@ -106,20 +106,6 @@
                         "to": {
                             "dataType": "Phone",
                             "isNullable": false,
-                            "direction": "out"
-                        }
-                    },
-                    {
-                        "body": {
-                            "dataType": "String",
-                            "isNullable": false,
-                            "direction": "out"
-                        }
-                    },
-                    {
-                        "email": {
-                            "dataType": "Email",
-                            "isNullable": true,
                             "direction": "out"
                         }
                     }
