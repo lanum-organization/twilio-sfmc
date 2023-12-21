@@ -108,7 +108,7 @@
                             "isNullable": false,
                             "direction": "out" 
                         }
-                    },
+                    }
                 ],
                 "outArguments": []
             }
