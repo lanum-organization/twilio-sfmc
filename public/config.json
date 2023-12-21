@@ -17,7 +17,9 @@
             "inArguments": [
                 {
                     "email": "{{Contact.Default.EmailAddress}}",
-                    "to": "{{Contact.Default.PhoneNumber}}"
+                    "to": "{{Contact.Default.PhoneNumber}}",
+                    "messageTemplate": "{{Interaction.messageTemplate}}",
+                    "apiKey": "{{Interaction.apiKey}}"
                 }
             ],
             "outArguments": [],
