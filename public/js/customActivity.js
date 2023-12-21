@@ -87,7 +87,7 @@ define([
         payload['arguments'].execute.inArguments = [{
             "messageTemplate": messageTemplate,
             "apiKey": apiKey,
-            "to": "{{Contact.Attribute.TwilioV1.TwilioNumber}}" //<----This should map to your data extension name and phone number column
+            "to": "{{Contact.Attribute.Tb_Contact_Salesforce_Disparo.TelefoneCelular__c}}" //<----This should map to your data extension name and phone number column
         }];
 
         payload['metaData'].isConfigured = true;
