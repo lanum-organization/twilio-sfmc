@@ -83,30 +83,34 @@
                 "inArguments": [
                     {
                         "messageTemplate": {
-                            "dataType": "String",
+                            "dataType": "Text",
                             "isNullable": false,
-                            "direction": "out"
+                            "direction": "in",
+                            "access": "visible"
                         }
                     },
                     {
                         "apiKey": {
-                            "dataType": "String",
+                            "dataType": "Text",
                             "isNullable": false,
-                            "direction": "out"
+                            "direction": "in",
+                            "access": "visible"
                         }
                     },
                     {
                         "from": {
-                            "dataType": "Phone",
-                            "isNullable": true,
-                            "direction": "out"
+                            "dataType": "Text",
+                            "isNullable": false,
+                            "direction": "in",
+                            "access": "visible"
                         }
                     },
                     {
                         "to": {
-                            "dataType": "Phone",
+                            "dataType": "Text",
                             "isNullable": false,
-                            "direction": "out"
+                            "direction": "in",
+                            "access": "visible"
                         }
                     }
                 ],
