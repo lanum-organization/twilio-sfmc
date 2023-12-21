@@ -99,14 +99,6 @@
                         }
                     },
                     {
-                        "from": {
-                            "dataType": "Text",
-                            "isNullable": false,
-                            "direction": "in",
-                            "access": "visible"
-                        }
-                    },
-                    {
                         "to": {
                             "dataType": "Text",
                             "isNullable": false,
