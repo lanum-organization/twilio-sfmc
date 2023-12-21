@@ -21,7 +21,7 @@
                 }
             ],
             "outArguments": [],
-            "url": "https://sfmc-carbel-a386749f8d73.herokuapp.com/journeybuilder/execute",
+            "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/execute",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -32,7 +32,7 @@
     "configurationArguments": {
         "applicationExtensionKey": "e962d1d4-8b07-4e76-89be-ecd1f1423b6d",
         "save": {
-            "url": "https://sfmc-carbel-a386749f8d73.herokuapp.com/save",
+            "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/save",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -40,7 +40,7 @@
             "timeout": 2000
         },
         "publish": {
-            "url": "https://sfmc-carbel-a386749f8d73.herokuapp.com/publish",
+            "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/publish",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -48,7 +48,7 @@
             "timeout": 2000
         },
         "validate": {
-            "url": "https://sfmc-carbel-a386749f8d73.herokuapp.com/validate",
+            "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/validate",
             "verb": "POST",
             "body": "",
             "format": "json",
@@ -56,7 +56,7 @@
             "timeout": 2000
         },
         "stop": {
-            "url": "https://sfmc-carbel-a386749f8d73.herokuapp.com/stop",
+            "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/stop",
             "verb": "POST",
             "body": "",
             "format": "json",
