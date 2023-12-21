@@ -16,9 +16,8 @@
         "execute": {
             "inArguments": [
                 {
+                    "email": "{{Contact.Default.EmailAddress}}"
                     "to": "{{Contact.Default.PhoneNumber}}",
-                    "messageTemplate": "{{Interaction.messageTemplate}}",
-                    "apiKey": "{{Interaction.apiKey}}"
                 }
             ],
             "outArguments": [],
@@ -84,28 +83,32 @@
                 "inArguments": [
                     {
                         "messageTemplate": {
-                            "dataType": "Text",
+                            "dataType": "String",
                             "isNullable": false,
-                            "direction": "in",
-                            "access": "visible"
+                            "direction": "out"
                         }
                     },
                     {
                         "apiKey": {
-                            "dataType": "Text",
+                            "dataType": "String",
                             "isNullable": false,
-                            "direction": "in",
-                            "access": "visible"
+                            "direction": "out"
                         }
                     },
                     {
                         "to": {
-                            "dataType": "Text",
+                            "dataType": "Phone",
                             "isNullable": false,
-                            "direction": "in",
-                            "access": "visible"
+                            "direction": "out" 
                         }
-                    }
+                    },
+                    {
+                        "email": {
+                            "dataType": "Email",
+                            "isNullable": false,
+                            "direction": "out" 
+                        }
+                    },
                 ],
                 "outArguments": []
             }
