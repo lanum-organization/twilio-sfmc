@@ -16,8 +16,8 @@
         "execute": {
             "inArguments": [
                 {
-                    "email": "{{Contact.Default.EmailAddress}}"
-                    "to": "{{Contact.Default.PhoneNumber}}",
+                    "email": "{{Contact.Default.EmailAddress}}",
+                    "to": "{{Contact.Default.PhoneNumber}}"
                 }
             ],
             "outArguments": [],
