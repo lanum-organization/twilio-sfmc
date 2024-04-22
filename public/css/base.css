@@ -1,3 +1,13 @@
-.max-width-600 { max-width: 600px; }
-
-.height-600 { height: 600px; overflow-y: auto; }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.full-height {
+    min-height: 100%;
+}
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
