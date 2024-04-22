@@ -7,7 +7,7 @@
   "type": "REST",
   "lang": {
     "en-US": {
-      "name": "Blip",
+      "name": "Blip - Lanum",
       "description": "Send Active Message in Blip platform",
       "TwilioMessage": "test"
     }

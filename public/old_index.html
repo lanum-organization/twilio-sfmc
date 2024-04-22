@@ -62,19 +62,29 @@
 <body>
     
     <div id="step1" class="step ">
-        <h2>Blip - WhatsApp Notificações</h2>
-        <p>Para executar esse disparo de notificações você precisa obter a chave de API do seu roteador. <br><a
-                href="https://docs.blip.ai/#http" target="_blank">Saber mais</a></p>
-        <hr>
-        <div class="form-group">
-            <div><label for="messageTemplate">Message Template</label></div>
-            <input class="form-control" id="messageTemplate" type="text" name="messageTemplate" value=""
-                placeholder="Exemplo: Hello World">
+        <div class="card-header m-3">
+            <h2>Blip - WhatsApp Notificações</h2>
+            <hr>
         </div>
-        <div class="form-group">
-            <div><label for="apiKey">API Key</label></div>
-            <input class="form-control" id="apiKey" type="password" name="apiKey" value=""
-                placeholder="Exemplo: Key ABCDE==">
+        <div class="card-body row m-0">
+            <div class="col-md-4 left-side p-0">
+                <img src="./images/icon.png" class="img-fluid" alt="Login image">
+            </div>
+            <div class="col-md-7 mt-5 right-side">
+                <p class="mb-4">Para executar esse disparo de notificações você precisa obter a chave de API do seu roteador.
+                    <a href="https://docs.blip.ai/#http" target="_blank">Saber mais</a>
+                </p>
+                <div class="form-group mb-3">
+                    <label for="messageTemplate">Message Template</label>
+                    <input class="form-control" id="messageTemplate" type="text" name="messageTemplate"
+                        placeholder="Exemplo: Hello World">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="apiKey">API Key</label>
+                    <input class="form-control" id="apiKey" type="password" name="apiKey"
+                        placeholder="Exemplo: Key ABCDE==">
+                </div>
+            </div>
         </div>
     </div>
 
