@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Blip: Custom Builder Activity</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- / Bootstrap CSS -->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/require.js"></script>
+    <script type="text/javascript">
+        (function () {
+            var config = {
+                baseUrl: 'js'
+            };
+
+            var dependencies = [
+                'customActivity'
+            ];
+
+            require(config, dependencies);
+        })();
+    </script>
+
+    <!--Styles-->
+    <style>
+        .modal-dialog {
+            max-width: 600px; /* Largura máxima do modal extra grande */
+        }
+        .modal-content {
+            max-height: 600px; /* Limitando a altura do modal */
+            overflow-y: hidden; /* Removendo a barra de scroll */
+        }
+        .left-side {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .right-side {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .img-fluid {
+            max-width: 100%; /* Ajustando a imagem para se adaptar à sua coluna */
+            height: auto;
+        }
+        .form-control {
+            width: 150%; /* Ampliando a largura dos campos de entrada para ocupar mais espaço */
+        }
+    </style>
+    <!-- /Styles-->
+
+</head>
+
+<body>
+    
+    <div id="step1" class="step">
+        <h2>Blip - WhatsApp Notificações</h2>
+        <p>Para executar esse disparo de notificações você precisa obter a chave de API do seu roteador. <br><a
+                href="https://docs.blip.ai/#http" target="_blank">Saber mais</a></p>
+        <hr>
+        <div class="form-group">
+            <div><label for="messageTemplate">Message Template</label></div>
+            <input class="form-control" id="messageTemplate" type="text" name="messageTemplate" value=""
+                placeholder="Exemplo: Hello World">
+        </div>
+        <div class="form-group">
+            <div><label for="apiKey">API Key</label></div>
+            <input class="form-control" id="apiKey" type="password" name="apiKey" value=""
+                placeholder="Exemplo: Key ABCDE==">
+        </div>
+    </div>
+
+    
+</body>
+
+</html>

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blip: Custom Builder Activity</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet"> <!-- Incluindo o arquivo base.css -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="js/require.js"></script>
     <script type="text/javascript">
         (function () {
@@ -22,38 +23,44 @@
             require(config, dependencies);
         })();
     </script>
-
-    <!--Styles-->
-    <style type="text/css">
-        body {
-            padding: 20px;
-            margin: 0;
-        }
-
-        #step1 {
-            display: block;
-        }
-    </style>
-
 </head>
 
 <body>
-    <div id="step1" class="step">
-        <h2>Blip - WhatsApp Notificações</h2>
-        <p>Para executar esse disparo de notificações você precisa obter a chave de API do seu roteador. <br><a
-                href="https://docs.blip.ai/#http" target="_blank">Saber mais</a></p>
-        <hr>
-        <div class="form-group">
-            <div><label for="messageTemplate">Message Template</label></div>
-            <input class="form-control" id="messageTemplate" type="text" name="messageTemplate" value=""
-                placeholder="Exemplo: Hello World">
-        </div>
-        <div class="form-group">
-            <div><label for="apiKey">API Key</label></div>
-            <input class="form-control" id="apiKey" type="password" name="apiKey" value=""
-                placeholder="Exemplo: Key ABCDE==">
-        </div>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-7 right-side">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Blip - WhatsApp Notificações</h2>
+                        </div>
+                        <div class="card-body row m-0">
+                            <div class="col-md-4 left-side">
+                                <img src="./images/icon.png" class="img-fluid" alt="Login image">
+                            </div>
+                            <div class="col-md-7 right-side">
+                                <p class="mb-4">Para executar esse disparo de notificações você precisa obter a chave de API do seu roteador.
+                                    <a href="https://docs.blip.ai/#http" target="_blank">Saber mais</a>
+                                </p>
+                                <div class="form-group mb-3">
+                                    <label for="messageTemplate">Message Template</label>
+                                    <input class="form-control" id="messageTemplate" type="text" name="messageTemplate"
+                                        placeholder="Exemplo: Hello World">
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="apiKey">API Key</label>
+                                    <input class="form-control" id="apiKey" type="password" name="apiKey"
+                                        placeholder="Exemplo: Key ABCDE==">
+                                </div>
+                                <button type="button" class="btn btn-primary">Enviar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
+
 </body>
 
 </html>
