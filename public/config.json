@@ -17,7 +17,7 @@
       "inArguments": [
         {
           "email": "{{Contact.Default.EmailAddress}}",
-          "to": "{{Contact.Attribute.Tb_Contact_Salesforce_Disparo.TelefoneCelular__c}}"
+          "to": "{{Contact.Default.PhoneNumber}}"
         }
       ],
       "outArguments": [],
