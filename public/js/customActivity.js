@@ -87,7 +87,7 @@ define([
         payload['arguments'].execute.inArguments = [{
             "messageTemplate": messageTemplate,
             "apiKey": apiKey,
-            "to": "{{Contact.Attribute.Tb_Contact_Salesforce_Disparo.TelefoneCelular__c}}" //<----This should map to your data extension name and phone number column
+            "to": "{{Contact.Default.PhoneNumber}}" //<----This should map to your data extension name and phone number column
         }];
 
         payload['metaData'].isConfigured = true;
