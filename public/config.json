@@ -30,7 +30,7 @@
     }
   },
   "configurationArguments": {
-    "applicationExtensionKey": "e962d1d4-8b07-4e76-89be-ecd1f1423b6d",
+    "applicationExtensionKey": "3b449032-8ab4-47eb-80e5-1dd08c950912",
     "save": {
       "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/save",
       "verb": "POST",
