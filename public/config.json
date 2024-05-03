@@ -97,7 +97,7 @@
           },
           {
             "to": {
-              "dataType": "String",
+              "dataType": "Phone",
               "isNullable": false,
               "direction": "out"
             }
