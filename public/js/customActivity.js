@@ -87,8 +87,8 @@ define([
         payload['arguments'].execute.inArguments = [{
             "messageTemplate": messageTemplate,
             "apiKey": apiKey,
-            "email": "{{Contact.Attribute.JourneyEntrySource.Email}}",
-            "to": "{{Contact.Attribute.JourneyEntrySource.Phone}}" //<----This should map to your data extension name and phone number column
+            "email": "{{JourneyEntrySource.Email}}",
+            "to": "{{JourneyEntrySource.Phone}}" //<----This should map to your data extension name and phone number column
         }];
 
         payload['metaData'].isConfigured = true;
