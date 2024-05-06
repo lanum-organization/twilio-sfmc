@@ -16,8 +16,8 @@
         "execute": {
             "inArguments": [
                 {
-                    "email": "{{JourneyEntrySource.Email}}",
-                    "to": "{{JourneyEntrySource.Phone}}"
+                    "email": "{{InteractionDefaults.Email}}",
+                    "to": "{{EntrySource.PhoneNumber}}"
                 }
             ],
             "outArguments": [],
