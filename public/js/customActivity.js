@@ -87,7 +87,7 @@ define([
         payload['arguments'].execute.inArguments = [{
             "messageTemplate": messageTemplate,
             "apiKey": apiKey,
-            "email": "{{Contact.Default.Email}}"
+            "email": "{{Contact.Default.Email}}",
             "to": "{{Contact.Attribute.JourneyEntrySource.TelefoneCelular__c}}" //<----This should map to your data extension name and phone number column
         }];
 
