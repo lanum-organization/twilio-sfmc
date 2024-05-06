@@ -17,7 +17,7 @@
       "inArguments": [
         {
           "email": "{{Contact.Default.EmailAddress}}",
-          "to": "{{Contact.Attribute.TelefoneCelular__c}}"
+          "to": "{{Contact.Attribute.JourneyEntrySource.TelefoneCelular__c}}"
         }
       ],
       "outArguments": [],
