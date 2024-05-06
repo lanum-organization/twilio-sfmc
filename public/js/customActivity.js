@@ -88,7 +88,7 @@ define([
             "messageTemplate": messageTemplate,
             "apiKey": apiKey,
             "email": "{{InteractionDefaults.Email}}",
-            "to": "{{Contact.Default.PhoneNumber}}" //<----This should map to your data extension name and phone number column
+            "to": "{{Contact.Default.SMS}}" //<----This should map to your data extension name and phone number column
         }];
 
         payload['metaData'].isConfigured = true;
