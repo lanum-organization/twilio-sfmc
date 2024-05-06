@@ -17,7 +17,7 @@
             "inArguments": [
                 {
                     "email": "{{InteractionDefaults.Email}}",
-                    "to": "{{Contact.Default.SMS}}"
+                    "to": "{{Event.EventKey.PhoneNumber}}"
                 }
             ],
             "outArguments": [],
