@@ -1,117 +1,117 @@
 {
-  "workflowApiVersion": "1.1",
-  "metaData": {
-    "icon": "images/iconSmall.png",
-    "category": "message"
-  },
-  "type": "REST",
-  "lang": {
-    "en-US": {
-      "name": "Blip - Lanum",
-      "description": "Send Active Message in Blip platform",
-      "TwilioMessage": "test"
-    }
-  },
-  "arguments": {
-    "execute": {
-      "inArguments": [
-        {
-          "email": "{{Contact.Default.EmailAddress}}",
-          "to": "{{Contact.Attribute.JourneyEntrySource.TelefoneCelular__c}}"
+    "workflowApiVersion": "1.1",
+    "metaData": {
+        "icon": "images/iconSmall.png",
+        "category": "message"
+    },
+    "type": "REST",
+    "lang": {
+        "en-US": {
+            "name": "Blip - Lanum",
+            "description": "Send Active Message in Blip platform",
+            "TwilioMessage": "test"
         }
-      ],
-      "outArguments": [],
-      "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/execute",
-      "verb": "POST",
-      "body": "",
-      "format": "json",
-      "useJwt": false,
-      "timeout": 90000
-    }
-  },
-  "configurationArguments": {
-    "applicationExtensionKey": "3b449032-8ab4-47eb-80e5-1dd08c950912",
-    "save": {
-      "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/save",
-      "verb": "POST",
-      "body": "",
-      "format": "json",
-      "useJwt": false,
-      "timeout": 2000
     },
-    "publish": {
-      "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/publish",
-      "verb": "POST",
-      "body": "",
-      "format": "json",
-      "useJwt": false,
-      "timeout": 2000
-    },
-    "validate": {
-      "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/validate",
-      "verb": "POST",
-      "body": "",
-      "format": "json",
-      "useJwt": false,
-      "timeout": 2000
-    },
-    "stop": {
-      "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/stop",
-      "verb": "POST",
-      "body": "",
-      "format": "json",
-      "useJwt": false,
-      "timeout": 2000
-    }
-  },
-  "wizardSteps": [
-    {
-      "label": "Configure Extension",
-      "key": "step1"
-    }
-  ],
-  "userInterfaces": {
-    "configModal": {
-      "height": 600,
-      "width": 800,
-      "fullscreen": false
-    }
-  },
-  "schema": {
     "arguments": {
-      "execute": {
-        "inArguments": [
-          {
-            "messageTemplate": {
-              "dataType": "String",
-              "isNullable": false,
-              "direction": "out"
+        "execute": {
+            "inArguments": [
+                {
+                    "email": "{{Contact.Attribute.JourneyEntrySource.Email}}",
+                    "to": "{{Contact.Attribute.JourneyEntrySource.Phone}}"
+                }
+            ],
+            "outArguments": [],
+            "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/execute",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 90000
+        }
+    },
+    "configurationArguments": {
+        "applicationExtensionKey": "3b449032-8ab4-47eb-80e5-1dd08c950912",
+        "save": {
+            "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/save",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 2000
+        },
+        "publish": {
+            "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/publish",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 2000
+        },
+        "validate": {
+            "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/validate",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 2000
+        },
+        "stop": {
+            "url": "https://sfmc-blip-api-89b6f34acfe2.herokuapp.com/journey/stop",
+            "verb": "POST",
+            "body": "",
+            "format": "json",
+            "useJwt": false,
+            "timeout": 2000
+        }
+    },
+    "wizardSteps": [
+        {
+            "label": "Configure Extension",
+            "key": "step1"
+        }
+    ],
+    "userInterfaces": {
+        "configModal": {
+            "height": 600,
+            "width": 800,
+            "fullscreen": false
+        }
+    },
+    "schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [
+                    {
+                        "messageTemplate": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+                    {
+                        "apiKey": {
+                            "dataType": "String",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+                    {
+                        "to": {
+                            "dataType": "Phone",
+                            "isNullable": false,
+                            "direction": "out"
+                        }
+                    },
+                    {
+                        "email": {
+                            "dataType": "Email",
+                            "isNullable": true,
+                            "direction": "out"
+                        }
+                    }
+                ],
+                "outArguments": []
             }
-          },
-          {
-            "apiKey": {
-              "dataType": "String",
-              "isNullable": false,
-              "direction": "out"
-            }
-          },
-          {
-            "to": {
-              "dataType": "Phone",
-              "isNullable": false,
-              "direction": "out"
-            }
-          },
-          {
-            "email": {
-              "dataType": "Email",
-              "isNullable": true,
-              "direction": "out"
-            }
-          }
-        ],
-        "outArguments": []
-      }
+        }
     }
-  }
 }
