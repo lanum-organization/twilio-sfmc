@@ -68,6 +68,18 @@ define([
 
     }
 
+    connection.on('requestedSchema', function (data) {
+        schema = data.schema;
+        var columns = schema.map(function (column) {
+            return column.key.split('.').pop();
+        });
+        $('#phoneColumn').empty();
+        columns.forEach(function (column) {
+            $('#phoneColumn').append(new Option(column, column));
+
+        });
+    });
+
     function onGetTokens(tokens) {
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
         console.log("Tokens function: " + JSON.stringify(tokens));

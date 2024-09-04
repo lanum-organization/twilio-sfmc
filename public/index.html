@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,35 +23,43 @@
         })();
     </script>
 </head>
+
 <body>
-<div class="container-fluid p-0 full-height">
-    <div class="card full-size-card m-0">
-        <div class="card-header text-center">
-            <h2>Blip - WhatsApp Notificações</h2>
-        </div>
-        <div class="card-body row justify-content-center m-0">
-            <div class="col-md-4 p-0">
-                <img src="./images/icon.png" class="img-fluid" alt="Logo">
+    <div class="container-fluid p-0 full-height">
+        <div class="card full-size-card m-0">
+            <div class="card-header text-center">
+                <h2>Blip - WhatsApp Notificações</h2>
             </div>
-            <div class="col-md-7 right-side ">
-                <div class="justify-content-center">
-                    <p class="alert alert-info">Para executar esse disparo de notificações você precisa obter a chave de API do seu roteador.
-                        <a href="https://docs.blip.ai/#http" target="_blank"><span class="badge text-bg-primary">Saber mais</span></a>
-                    </p>
+            <div class="card-body row justify-content-center m-0">
+                <div class="col-md-4 p-0">
+                    <img src="./images/icon.png" class="img-fluid" alt="Logo">
                 </div>
-                <div class="form-group mb-3">
-                    <label for="messageTemplate">Message Template</label>
-                    <input class="form-control" id="messageTemplate" type="text" name="messageTemplate"
-                        placeholder="Exemplo: Hello World">
-                </div>
-                <div class="form-group mb-3">
-                    <label for="apiKey">API Key</label>
-                    <input class="form-control" id="apiKey" type="password" name="apiKey"
-                        placeholder="Exemplo: Key ABCDE==">
+                <div class="col-md-7 right-side ">
+                    <div class="justify-content-center">
+                        <p class="alert alert-info">Para executar esse disparo de notificações você precisa obter a
+                            chave de API do seu roteador.
+                            <a href="https://docs.blip.ai/#http" target="_blank"><span
+                                    class="badge text-bg-primary">Saber mais</span></a>
+                        </p>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="messageTemplate">Message Template</label>
+                        <input class="form-control" id="messageTemplate" type="text" name="messageTemplate"
+                            placeholder="Exemplo: Hello World">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="apiKey">API Key</label>
+                        <input class="form-control" id="apiKey" type="password" name="apiKey"
+                            placeholder="Exemplo: Key ABCDE==">
+                    </div>
+                    <div class="mb-3">
+                        <label for="phoneColumn" class="form-label">Phone Column:</label>
+                        <select id="phoneColumn" class="form-select"></select>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </body>
+
 </html>
