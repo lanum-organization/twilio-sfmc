@@ -30,18 +30,6 @@ define([
         connection.trigger('requestEndpoints');
     }
     function initialize(data) {
-        connection.on('requestedSchema', function (data) {
-        schema = data.schema;
-        console.log(schema);
-        var columns = schema.map(function (column) {
-            return column.key.split('.').pop();
-        });
-        $('#phoneColumn').empty();
-            columns.forEach(function (column) {
-                $('#phoneColumn').append(new Option(column, column));
-    
-            });
-        });
         console.log("Initializing data data: " + JSON.stringify(data));
         if (data) {
             payload = data;
@@ -89,6 +77,23 @@ define([
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
         console.log("Get End Points function: " + JSON.stringify(endpoints));
     }
+    
+    connection.on('requestedInteraction', function (settings) {
+        eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
+        connection.trigger('requestSchema');
+    });
+    connection.on('requestedSchema', function (data) {
+        schema = data.schema;
+        console.log(schema);
+        var columns = schema.map(function (column) {
+            return column.key.split('.').pop();
+        });
+        $('#phoneColumn').empty();
+            columns.forEach(function (column) {
+                $('#phoneColumn').append(new Option(column, column));
+    
+            });
+        });
 
     function save() {
 
