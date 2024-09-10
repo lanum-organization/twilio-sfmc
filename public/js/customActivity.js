@@ -29,13 +29,24 @@ define([
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
     }
+    connection.on('requestedSchema', function (data) {
+        schema = data.schema;
+        console.log(schema);
+        var columns = schema.map(function (column) {
+            return column.key.split('.').pop();
+        });
+        $('#phoneColumn').empty();
+        columns.forEach(function (column) {
+            $('#phoneColumn').append(new Option(column, column));
 
+        });
+    });
     function initialize(data) {
         console.log("Initializing data data: " + JSON.stringify(data));
         if (data) {
             payload = data;
         }
-
+        
         var hasInArguments = Boolean(
             payload['arguments'] &&
             payload['arguments'].execute &&
@@ -59,7 +70,7 @@ define([
                 }
             })
         });
-
+        
         connection.trigger('updateButton', {
             button: 'next',
             text: 'done',
@@ -67,18 +78,6 @@ define([
         });
 
     }
-    connection.on('requestedSchema', function (data) {
-        schema = data.schema;
-        console.log(schema);
-        var columns = schema.map(function (column) {
-            return column.key.split('.').pop();
-        });
-        $('#phoneColumn').empty();
-        columns.forEach(function (column) {
-            $('#phoneColumn').append(new Option(column, column));
-
-        });
-    });
 
     function onGetTokens(tokens) {
         // Response: tokens = { token: <legacy token>, fuel2token: <fuel api token> }
