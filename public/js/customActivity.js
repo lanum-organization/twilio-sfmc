@@ -25,6 +25,7 @@ define([
 
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
+        connection.trigger('requestInteraction');
         connection.trigger('ready');
         connection.trigger('requestTokens');
         connection.trigger('requestEndpoints');
