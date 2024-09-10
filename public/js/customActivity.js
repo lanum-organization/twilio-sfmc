@@ -25,22 +25,22 @@ define([
 
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
-        connection.trigger('ready');
-        connection.trigger('requestTokens');
-        connection.trigger('requestEndpoints');
-    }
-    connection.on('requestedSchema', function (data) {
+        connection.on('requestedSchema', function (data) {
         schema = data.schema;
         console.log(schema);
         var columns = schema.map(function (column) {
             return column.key.split('.').pop();
         });
         $('#phoneColumn').empty();
-        columns.forEach(function (column) {
-            $('#phoneColumn').append(new Option(column, column));
-
+            columns.forEach(function (column) {
+                $('#phoneColumn').append(new Option(column, column));
+    
+            });
         });
-    });
+        connection.trigger('ready');
+        connection.trigger('requestTokens');
+        connection.trigger('requestEndpoints');
+    }
     function initialize(data) {
         console.log("Initializing data data: " + JSON.stringify(data));
         if (data) {
