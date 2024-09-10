@@ -25,6 +25,11 @@ define([
 
     function onRender() {
         // JB will respond the first time 'ready' is called with 'initActivity'
+        connection.trigger('ready');
+        connection.trigger('requestTokens');
+        connection.trigger('requestEndpoints');
+    }
+    function initialize(data) {
         connection.on('requestedSchema', function (data) {
         schema = data.schema;
         console.log(schema);
@@ -37,11 +42,6 @@ define([
     
             });
         });
-        connection.trigger('ready');
-        connection.trigger('requestTokens');
-        connection.trigger('requestEndpoints');
-    }
-    function initialize(data) {
         console.log("Initializing data data: " + JSON.stringify(data));
         if (data) {
             payload = data;
