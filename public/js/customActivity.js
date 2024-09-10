@@ -99,15 +99,15 @@ define([
         });
 
     function save() {
-
+        var selectedPhoneColumn = $('#phoneColumn').val(); 
         var messageTemplate = $('#messageTemplate').val();
         var apiKey = $('#apiKey').val();
-
+        var phone = '{{Event.' + eventDefinitionKey + '.' +'"'+selectedPhoneColumn+'"'+ '}}';
         payload['arguments'].execute.inArguments = [{
             "messageTemplate": messageTemplate,
             "apiKey": apiKey,
             "email": "{{InteractionDefaults.Email}}",
-            "to": "{{Event.EventKey.PhoneNumber}}" //<----This should map to your data extension name and phone number column
+            "to": phone
         }];
 
         payload['metaData'].isConfigured = true;
@@ -115,6 +115,6 @@ define([
         console.log("Payload on SAVE function: " + JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
 
-    }
+    }
 
 });
