@@ -67,9 +67,9 @@ define([
         });
 
     }
-
     connection.on('requestedSchema', function (data) {
         schema = data.schema;
+        console.log(schema);
         var columns = schema.map(function (column) {
             return column.key.split('.').pop();
         });
