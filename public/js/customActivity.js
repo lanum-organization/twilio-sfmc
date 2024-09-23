@@ -37,7 +37,7 @@ define([
         if (data) {
             payload = data;
         }
-        
+
         var hasInArguments = Boolean(
             payload['arguments'] &&
             payload['arguments'].execute &&
@@ -61,7 +61,7 @@ define([
                 }
             })
         });
-        
+
         connection.trigger('updateButton', {
             button: 'next',
             text: 'done',
@@ -80,7 +80,7 @@ define([
         // Response: endpoints = { restHost: <url> } i.e. "rest.s1.qa1.exacttarget.com"
         console.log("Get End Points function: " + JSON.stringify(endpoints));
     }
-    
+
     connection.on('requestedInteraction', function (settings) {
         eventDefinitionKey = settings.triggers[0].metaData.eventDefinitionKey;
         connection.trigger('requestSchema');
@@ -88,21 +88,25 @@ define([
     connection.on('requestedSchema', function (data) {
         schema = data.schema;
         console.log(schema);
-        var columns = schema.map(function (column) {
-            return column.key.split('.').pop();
-        });
-        $('#phoneColumn').empty();
-            columns.forEach(function (column) {
-                $('#phoneColumn').append(new Option(column, column));
-    
-            });
+
+        // Filtra as colunas do tipo Phone
+        var phoneColumns = schema.filter(function (column) {
+            return column.type === 'Phone';  // Filtra apenas as colunas do tipo Phone
+        }).map(function (column) {
+            return column.key.split('.').pop();  // Extrai a última parte da chave da coluna
         });
 
+        $('#phoneColumn').empty(); // Limpa as opções atuais
+        phoneColumns.forEach(function (column) {
+            $('#phoneColumn').append(new Option(column, column)); // Adiciona as colunas do tipo Phone
+        });
+    });
+
     function save() {
-        var selectedPhoneColumn = $('#phoneColumn').val(); 
+        var selectedPhoneColumn = $('#phoneColumn').val();
         var messageTemplate = $('#messageTemplate').val();
         var apiKey = $('#apiKey').val();
-        var phone = '{{Event.' + eventDefinitionKey + '.' +'"'+selectedPhoneColumn+'"'+ '}}';
+        var phone = '{{Event.' + eventDefinitionKey + '.' + '"' + selectedPhoneColumn + '"' + '}}';
         payload['arguments'].execute.inArguments = [{
             "messageTemplate": messageTemplate,
             "apiKey": apiKey,
@@ -115,6 +119,6 @@ define([
         console.log("Payload on SAVE function: " + JSON.stringify(payload));
         connection.trigger('updateActivity', payload);
 
-    }
+    }
 
 });
