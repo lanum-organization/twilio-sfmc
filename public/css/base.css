@@ -1,29 +1,40 @@
-
-html, body {
-    height: 100%; /* Torna o corpo da página em 100% da altura da tela */
+html,
+body {
+    height: 100%;
+    /* Torna o corpo da página em 100% da altura da tela */
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
+
 .full-height {
-    min-height: 100vh; /* Define a altura mínima como 100% da altura da janela de visualização */
+    min-height: 100vh;
+    /* Define a altura mínima como 100% da altura da janela de visualização */
     display: flex;
-    align-items: center; /* Alinha itens verticalmente ao centro */
-    justify-content: center; /* Alinha itens horizontalmente ao centro */
+    align-items: center;
+    /* Alinha itens verticalmente ao centro */
+    justify-content: center;
+    /* Alinha itens horizontalmente ao centro */
 }
+
 .full-size-card {
-    height: 100vh; /* Faz o card ocupar toda a altura da viewport */
-    width: 100vw; /* Faz o card ocupar toda a largura da viewport */
+    /* height: 100vh; */
+    /* Faz o card ocupar toda a altura da viewport */
+    width: 100vw;
+    /* Faz o card ocupar toda a largura da viewport */
     margin: 0;
     display: flex;
-    flex-direction: column; /* Organiza o conteúdo do card em uma coluna */
+    flex-direction: column;
+    /* Organiza o conteúdo do card em uma coluna */
 }
+
 .card-body {
-    flex-grow: 1; /* Permite que o corpo do card expanda para preencher o espaço disponível */
+    flex-grow: 1;
     display: flex;
-    justify-content: center; /* Centraliza o conteúdo horizontalmente dentro do corpo do card */
-    align-items: center; /* Centraliza o conteúdo verticalmente dentro do corpo do card */
+    justify-content: center;
+    align-items: center;
 }
+
 .img-fluid {
     max-width: 100%;
     height: auto;
