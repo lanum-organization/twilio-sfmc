@@ -91,6 +91,7 @@ define([
 
         // Filtra as colunas do tipo Phone
         var phoneColumns = schema.filter(function (column) {
+            console.log(column.type)
             return column.type === 'Phone';  // Filtra apenas as colunas do tipo Phone
         }).map(function (column) {
             return column.key.split('.').pop();  // Extrai a última parte da chave da coluna
@@ -120,24 +121,40 @@ define([
         textColumns.forEach(function (column) {
             $('#var2Column').append(new Option(column, column)); // Adiciona as colunas do tipo Text
         });
+
+        $('#var3Column').empty();
+        textColumns.forEach(function (column) {
+            $('#var3Column').append(new Option(column, column)); // Adiciona as colunas do tipo Text
+        });
+
+        $('#var4Column').empty();
+        textColumns.forEach(function (column) {
+            $('#var4Column').append(new Option(column, column)); // Adiciona as colunas do tipo Text
+        });
     });
 
     function save() {
         var selectedPhoneColumn = $('#phoneColumn').val();
         var selectedVar1Column = $('#var1Column').val();
         var selectedVar2Column = $('#var2Column').val();
+        var selectedVar2Column = $('#var3Column').val();
+        var selectedVar2Column = $('#var4Column').val();
         var messageTemplate = $('#messageTemplate').val();
         var apiKey = $('#apiKey').val();
         var phone = '{{Event.' + eventDefinitionKey + '.' + '"' + selectedPhoneColumn + '"' + '}}';
         var var1 = '{{Event.' + eventDefinitionKey + '.' + '"' + selectedVar1Column + '"' + '}}';
         var var2 = '{{Event.' + eventDefinitionKey + '.' + '"' + selectedVar2Column + '"' + '}}';
+        var var3 = '{{Event.' + eventDefinitionKey + '.' + '"' + selectedVar3Column + '"' + '}}';
+        var var4 = '{{Event.' + eventDefinitionKey + '.' + '"' + selectedVar4Column + '"' + '}}';
         payload['arguments'].execute.inArguments = [{
             "messageTemplate": messageTemplate,
             "apiKey": apiKey,
             "email": "{{InteractionDefaults.Email}}",
             "to": phone,
             "var1": var1,
-            "var2": var2
+            "var2": var2,
+            "var3": var3,
+            "var4": var4
         }];
 
         payload['metaData'].isConfigured = true;
