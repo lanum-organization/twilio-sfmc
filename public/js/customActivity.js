@@ -99,7 +99,7 @@ define([
 
         // Filtra as colunas do tipo Text
         var textColumns = schema.filter(function (column) {
-            return column.type === 'Text';  // Filtra apenas as colunas do tipo Text
+            return ['Text', 'Date', 'Datetime'].includes(column.type);  // Filtra apenas as colunas do tipo Text
         }).map(function (column) {
             return column.key.split('.').pop();  // Extrai a última parte da chave da coluna
         });
