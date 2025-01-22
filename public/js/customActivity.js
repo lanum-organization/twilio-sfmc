@@ -104,30 +104,36 @@ define([
             return column.key.split('.').pop();  // Extrai a última parte da chave da coluna
         });
 
-        // Limpa e preenche phoneColumn com colunas do tipo Phone
         $('#phoneColumn').empty();
+        $('#phoneColumn').append(new Option('-- Selecione aqui --', '')); // Adiciona a opção padrão
         phoneColumns.forEach(function (column) {
             $('#phoneColumn').append(new Option(column, column)); // Adiciona as colunas do tipo Phone
         });
 
         // Limpa e preenche var1Column com colunas do tipo Text
         $('#var1Column').empty();
+        $('#var1Column').append(new Option('-- Selecione aqui --', '')); // Adiciona a opção padrão
         textColumns.forEach(function (column) {
             $('#var1Column').append(new Option(column, column)); // Adiciona as colunas do tipo Text
         });
 
         // Limpa e preenche var2Column com colunas do tipo Text
         $('#var2Column').empty();
+        $('#var2Column').append(new Option('-- Selecione aqui --', '')); // Adiciona a opção padrão
         textColumns.forEach(function (column) {
             $('#var2Column').append(new Option(column, column)); // Adiciona as colunas do tipo Text
         });
 
+        // Limpa e preenche var3Column com colunas do tipo Text
         $('#var3Column').empty();
+        $('#var3Column').append(new Option('-- Selecione aqui --', '')); // Adiciona a opção padrão
         textColumns.forEach(function (column) {
             $('#var3Column').append(new Option(column, column)); // Adiciona as colunas do tipo Text
         });
 
+        // Limpa e preenche var4Column com colunas do tipo Text
         $('#var4Column').empty();
+        $('#var4Column').append(new Option('-- Selecione aqui --', '')); // Adiciona a opção padrão
         textColumns.forEach(function (column) {
             $('#var4Column').append(new Option(column, column)); // Adiciona as colunas do tipo Text
         });
@@ -137,8 +143,8 @@ define([
         var selectedPhoneColumn = $('#phoneColumn').val();
         var selectedVar1Column = $('#var1Column').val();
         var selectedVar2Column = $('#var2Column').val();
-        var selectedVar2Column = $('#var3Column').val();
-        var selectedVar2Column = $('#var4Column').val();
+        var selectedVar3Column = $('#var3Column').val();
+        var selectedVar4Column = $('#var4Column').val();
         var messageTemplate = $('#messageTemplate').val();
         var apiKey = $('#apiKey').val();
         var phone = '{{Event.' + eventDefinitionKey + '.' + '"' + selectedPhoneColumn + '"' + '}}';
