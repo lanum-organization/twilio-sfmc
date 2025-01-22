@@ -68,25 +68,25 @@ define([
                 if (key === 'var1') {
                     const match = val.match(/\."([^"]+)"\}\}$/);
                     console.log("Match: " + val + ' ' + match);
-                    $('var1Column').data('selectedValue', match ? match[1] : null);
+                    $('#var1Column').data('selectedValue', match ? match[1] : null);
                 }
 
                 if (key === 'var2') {
                     const match = val.match(/\."([^"]+)"\}\}$/);
                     console.log("Match: " + val + ' ' + match);
-                    $('var2Column').data('selectedValue', match ? match[1] : null);
+                    $('#var2Column').data('selectedValue', match ? match[1] : null);
                 }
 
                 if (key === 'var3') {
                     const match = val.match(/\."([^"]+)"\}\}$/);
                     console.log("Match: " + val + ' ' + match);
-                    $('var3Column').data('selectedValue', match ? match[1] : null);
+                    $('#var3Column').data('selectedValue', match ? match[1] : null);
                 }
 
                 if (key === 'var4') {
                     const match = val.match(/\."([^"]+)"\}\}$/);
                     console.log("Match: " + val + ' ' + match);
-                    $('var4Column').data('selectedValue', match ? match[1] : null);
+                    $('#var4Column').data('selectedValue', match ? match[1] : null);
                 }
             })
         });
