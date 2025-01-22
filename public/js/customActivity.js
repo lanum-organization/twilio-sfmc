@@ -143,6 +143,7 @@ define([
         $('#var1Column').empty();
         $('#var1Column').append(new Option('-- Selecione aqui --', ''));
         textColumns.forEach(function (column) {
+            console.log($('#var1Column').data('selectedValue'));
             $('#var1Column').append(new Option(column, column, column == $('#var1Column').data('selectedValue'), column == $('#var1Column').data('selectedValue'))); // Adiciona as colunas do tipo Text
         });
 
