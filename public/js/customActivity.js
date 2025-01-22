@@ -110,17 +110,12 @@ define([
 
         // Limpa e preenche phoneColumn com colunas do tipo Phone
         $('#phoneColumn').empty();
+        console.log("Selected Value: " + $('#phoneColumn').data('selectedValue'));
+        selectedValue = $('#phoneColumn').data('selectedValue');
         $('#phoneColumn').append(new Option('-- Selecione aqui --', ''));
         phoneColumns.forEach(function (column) {
-            $('#phoneColumn').append(new Option(column, column)); // Adiciona as colunas do tipo Phone
+            $('#phoneColumn').append(new Option(column, column, column == selectedValue)); // Adiciona as colunas do tipo Phone
         });
-
-        // Define o valor selecionado, se existir
-        console.log("Selected Value: " + $('#phoneColumn').data('selectedValue'));
-        var selectedValue = $('#phoneColumn').data('selectedValue');
-        if (selectedValue) {
-            $('#phoneColumn').val(selectedValue);
-        }
 
         // Limpa e preenche var1Column com colunas do tipo Text
         $('#var1Column').empty();
