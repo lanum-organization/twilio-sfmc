@@ -113,6 +113,7 @@ define([
         console.log("Selected Value: " + $('#phoneColumn').data('selectedValue'));
         $('#phoneColumn').append(new Option('-- Selecione aqui --', ''));
         phoneColumns.forEach(function (column) {
+            console.log(column, $('#phoneColumn').data('selectedValue'), column == $('#phoneColumn').data('selectedValue'), column == $('#phoneColumn').data('selectedValue'), column == $('#phoneColumn').data('selectedValue'))
             $('#phoneColumn').append(new Option(column, column, column == $('#phoneColumn').data('selectedValue'), column == $('#phoneColumn').data('selectedValue')))
         });
 
