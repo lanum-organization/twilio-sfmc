@@ -68,25 +68,25 @@ define([
                 if (key === 'var1') {
                     const match = val.match(/\."([^"]+)"\}\}$/);
                     console.log("Match: " + val + ' ' + match);
-                    $('#var1').data('selectedValue', match ? match[1] : null);
+                    $('var1Column').data('selectedValue', match ? match[1] : null);
                 }
 
                 if (key === 'var2') {
                     const match = val.match(/\."([^"]+)"\}\}$/);
                     console.log("Match: " + val + ' ' + match);
-                    $('#var2').data('selectedValue', match ? match[1] : null);
+                    $('var2Column').data('selectedValue', match ? match[1] : null);
                 }
 
                 if (key === 'var3') {
                     const match = val.match(/\."([^"]+)"\}\}$/);
                     console.log("Match: " + val + ' ' + match);
-                    $('#var3').data('selectedValue', match ? match[1] : null);
+                    $('var3Column').data('selectedValue', match ? match[1] : null);
                 }
 
                 if (key === 'var4') {
                     const match = val.match(/\."([^"]+)"\}\}$/);
                     console.log("Match: " + val + ' ' + match);
-                    $('#var4').data('selectedValue', match ? match[1] : null);
+                    $('var4Column').data('selectedValue', match ? match[1] : null);
                 }
             })
         });
@@ -136,7 +136,6 @@ define([
         $('#phoneColumn').empty();
         $('#phoneColumn').append(new Option('-- Selecione aqui --', ''));
         phoneColumns.forEach(function (column) {
-            console.log($('#phoneColumn'))
             $('#phoneColumn').append(new Option(column, column, column == $('#phoneColumn').data('selectedValue'), column == $('#phoneColumn').data('selectedValue')))
         });
 
@@ -144,7 +143,6 @@ define([
         $('#var1Column').empty();
         $('#var1Column').append(new Option('-- Selecione aqui --', ''));
         textColumns.forEach(function (column) {
-            console.log($('#var1Column'))
             $('#var1Column').append(new Option(column, column, column == $('#var1Column').data('selectedValue'), column == $('#var1Column').data('selectedValue'))); // Adiciona as colunas do tipo Text
         });
 
@@ -152,21 +150,18 @@ define([
         $('#var2Column').empty();
         $('#var2Column').append(new Option('-- Selecione aqui --', ''));
         textColumns.forEach(function (column) {
-            console.log($('#var2Column').data('selectedValue'))
             $('#var2Column').append(new Option(column, column, column == $('#var2Column').data('selectedValue'), column == $('#var2Column').data('selectedValue'))); // Adiciona as colunas do tipo Text
         });
 
         $('#var3Column').empty();
         $('#var3Column').append(new Option('-- Selecione aqui --', ''));
         textColumns.forEach(function (column) {
-            console.log($('#var3Column').data('selectedValue'))
             $('#var3Column').append(new Option(column, column, column == $('#var3Column').data('selectedValue'), column == $('#var3Column').data('selectedValue'))); // Adiciona as colunas do tipo Text
         });
 
         $('#var4Column').empty();
         $('#var4Column').append(new Option('-- Selecione aqui --', ''));
         textColumns.forEach(function (column) {
-            console.log($('#var4Column').data('selectedValue'))
             $('#var4Column').append(new Option(column, column, column == $('#var4Column').data('selectedValue'), column == $('#var4Column').data('selectedValue'))); // Adiciona as colunas do tipo Text
         });
     });
