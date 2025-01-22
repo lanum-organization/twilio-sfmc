@@ -60,7 +60,7 @@ define([
                 }
 
                 if (key === 'to') {
-                    const match = key.match(/\.(\w+)\}\}$/);
+                    const match = key.match(/\."([^"]+)"\}\}$/);
                     $('#phoneColumn').data('selectedValue', match ? match[1] : null);
                 }
             })
