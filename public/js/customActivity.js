@@ -127,7 +127,7 @@ define([
 
         // Filtra as colunas do tipo Text
         var textColumns = schema.filter(function (column) {
-            return column.type === 'Text';  // Filtra apenas as colunas do tipo Text
+            return ['Text', 'Date', 'Datetime'].includes(column.type);  // Filtra apenas as colunas do tipo Text, Date e Datetime
         }).map(function (column) {
             return column.key.split('.').pop();  // Extrai a última parte da chave da coluna
         });
@@ -143,6 +143,7 @@ define([
         $('#var1Column').empty();
         $('#var1Column').append(new Option('-- Selecione aqui --', ''));
         textColumns.forEach(function (column) {
+            console.log($('#var1Column').data('selectedValue'))
             $('#var1Column').append(new Option(column, column, column == $('#var1Column').data('selectedValue'), column == $('#var1Column').data('selectedValue'))); // Adiciona as colunas do tipo Text
         });
 
@@ -150,18 +151,21 @@ define([
         $('#var2Column').empty();
         $('#var2Column').append(new Option('-- Selecione aqui --', ''));
         textColumns.forEach(function (column) {
+            console.log($('#var2Column').data('selectedValue'))
             $('#var2Column').append(new Option(column, column, column == $('#var2Column').data('selectedValue'), column == $('#var2Column').data('selectedValue'))); // Adiciona as colunas do tipo Text
         });
 
         $('#var3Column').empty();
         $('#var3Column').append(new Option('-- Selecione aqui --', ''));
         textColumns.forEach(function (column) {
+            console.log($('#var3Column').data('selectedValue'))
             $('#var3Column').append(new Option(column, column, column == $('#var3Column').data('selectedValue'), column == $('#var3Column').data('selectedValue'))); // Adiciona as colunas do tipo Text
         });
 
         $('#var4Column').empty();
         $('#var4Column').append(new Option('-- Selecione aqui --', ''));
         textColumns.forEach(function (column) {
+            console.log($('#var4Column').data('selectedValue'))
             $('#var4Column').append(new Option(column, column, column == $('#var4Column').data('selectedValue'), column == $('#var4Column').data('selectedValue'))); // Adiciona as colunas do tipo Text
         });
     });
