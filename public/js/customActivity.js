@@ -60,8 +60,8 @@ define([
                 }
 
                 if (key === 'to') {
-                    const match = key.match(/\."([^"]+)"\}\}$/);
-                    console.log("Match: " + key + ' ' + match);
+                    const match = val.match(/\."([^"]+)"\}\}$/);
+                    console.log("Match: " + val + ' ' + match);
                     $('#phoneColumn').data('selectedValue', match ? match[1] : null);
                 }
             })
