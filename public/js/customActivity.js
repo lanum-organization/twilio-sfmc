@@ -59,6 +59,11 @@ define([
                 if (key === 'apiKey') {
                     $('#apiKey').val(val);
                 }
+
+                if (key === 'to') {
+                    console.log("to: " + val);
+                    $('#phoneColumn' + ' option').val(val);
+                }
             })
         });
 
@@ -104,10 +109,13 @@ define([
         });
 
         // Limpa e preenche phoneColumn com colunas do tipo Phone
-        $('#phoneColumn').empty();
-        phoneColumns.forEach(function (column) {
-            $('#phoneColumn').append(new Option(column, column)); // Adiciona as colunas do tipo Phone
-        });
+        if ($('#phoneColumn' + ' option') == "-- Selecione aqui --") {
+            $('#phoneColumn').empty();
+            $('#phoneColumn').append(new Option('-- Selecione aqui --', ''));
+            phoneColumns.forEach(function (column) {
+                $('#phoneColumn').append(new Option(column, column)); // Adiciona as colunas do tipo Phone
+            });
+        }
 
         // Limpa e preenche var1Column com colunas do tipo Text
         $('#var1Column').empty();
