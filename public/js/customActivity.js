@@ -59,6 +59,26 @@ define([
                 if (key === 'apiKey') {
                     $('#apiKey').val(val);
                 }
+
+                if (key === 'to') {
+                    $('#phoneColumn').val(val);
+                }
+
+                if (key === 'var1') {
+                    $('var1Column').val(val);
+                }
+
+                if (key === 'var2') {
+                    $('var2Column').val(val);
+                }
+
+                if (key === 'var3') {
+                    $('var3Column').val(val);
+                }
+
+                if (key === 'var4') {
+                    $('var4Column').val(val);
+                }
             })
         });
 
