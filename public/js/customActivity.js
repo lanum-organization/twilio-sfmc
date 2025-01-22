@@ -62,7 +62,7 @@ define([
 
                 if (key === 'to') {
                     console.log("to: " + val);
-                    $('#phoneColumn' + ' option').val(val);
+                    $('#phoneColumn').data('selectedValue', val.split('.').pop());
                 }
             })
         });
@@ -109,12 +109,17 @@ define([
         });
 
         // Limpa e preenche phoneColumn com colunas do tipo Phone
-        if ($('#phoneColumn' + ' option') == "-- Selecione aqui --") {
-            $('#phoneColumn').empty();
-            $('#phoneColumn').append(new Option('-- Selecione aqui --', ''));
-            phoneColumns.forEach(function (column) {
-                $('#phoneColumn').append(new Option(column, column)); // Adiciona as colunas do tipo Phone
-            });
+        $('#phoneColumn').empty();
+        $('#phoneColumn').append(new Option('-- Selecione aqui --', ''));
+        phoneColumns.forEach(function (column) {
+            $('#phoneColumn').append(new Option(column, column)); // Adiciona as colunas do tipo Phone
+        });
+
+        // Define o valor selecionado, se existir
+        console.log("Selected Value: " + $('#phoneColumn').data('selectedValue'));
+        var selectedValue = $('#phoneColumn').data('selectedValue');
+        if (selectedValue) {
+            $('#phoneColumn').val(selectedValue);
         }
 
         // Limpa e preenche var1Column com colunas do tipo Text
