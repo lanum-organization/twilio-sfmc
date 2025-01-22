@@ -61,6 +61,7 @@ define([
 
                 if (key === 'to') {
                     const match = key.match(/\."([^"]+)"\}\}$/);
+                    console.log("Match: " + match);
                     $('#phoneColumn').data('selectedValue', match ? match[1] : null);
                 }
             })
