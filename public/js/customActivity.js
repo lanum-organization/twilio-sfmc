@@ -64,6 +64,30 @@ define([
                     console.log("Match: " + val + ' ' + match);
                     $('#phoneColumn').data('selectedValue', match ? match[1] : null);
                 }
+
+                if (key === 'var1') {
+                    const match = val.match(/\."([^"]+)"\}\}$/);
+                    console.log("Match: " + val + ' ' + match);
+                    $('#var1').data('selectedValue', match ? match[1] : null);
+                }
+
+                if (key === 'var2') {
+                    const match = val.match(/\."([^"]+)"\}\}$/);
+                    console.log("Match: " + val + ' ' + match);
+                    $('#var2').data('selectedValue', match ? match[1] : null);
+                }
+
+                if (key === 'var3') {
+                    const match = val.match(/\."([^"]+)"\}\}$/);
+                    console.log("Match: " + val + ' ' + match);
+                    $('#var3').data('selectedValue', match ? match[1] : null);
+                }
+
+                if (key === 'var4') {
+                    const match = val.match(/\."([^"]+)"\}\}$/);
+                    console.log("Match: " + val + ' ' + match);
+                    $('#var4').data('selectedValue', match ? match[1] : null);
+                }
             })
         });
 
@@ -110,23 +134,35 @@ define([
 
         // Limpa e preenche phoneColumn com colunas do tipo Phone
         $('#phoneColumn').empty();
-        console.log("Selected Value: " + $('#phoneColumn').data('selectedValue'));
         $('#phoneColumn').append(new Option('-- Selecione aqui --', ''));
         phoneColumns.forEach(function (column) {
-            console.log(column, $('#phoneColumn').data('selectedValue'), column == $('#phoneColumn').data('selectedValue'), column == $('#phoneColumn').data('selectedValue'), column == $('#phoneColumn').data('selectedValue'))
             $('#phoneColumn').append(new Option(column, column, column == $('#phoneColumn').data('selectedValue'), column == $('#phoneColumn').data('selectedValue')))
         });
 
         // Limpa e preenche var1Column com colunas do tipo Text
         $('#var1Column').empty();
+        $('#var1Column').append(new Option('-- Selecione aqui --', ''));
         textColumns.forEach(function (column) {
-            $('#var1Column').append(new Option(column, column)); // Adiciona as colunas do tipo Text
+            $('#var1Column').append(new Option(column, column, column == $('#var1Column').data('selectedValue'), column == $('#var1Column').data('selectedValue'))); // Adiciona as colunas do tipo Text
         });
 
         // Limpa e preenche var2Column com colunas do tipo Text
         $('#var2Column').empty();
+        $('#var2Column').append(new Option('-- Selecione aqui --', ''));
         textColumns.forEach(function (column) {
-            $('#var2Column').append(new Option(column, column)); // Adiciona as colunas do tipo Text
+            $('#var2Column').append(new Option(column, column, column == $('#var2Column').data('selectedValue'), column == $('#var2Column').data('selectedValue'))); // Adiciona as colunas do tipo Text
+        });
+
+        $('#var3Column').empty();
+        $('#var3Column').append(new Option('-- Selecione aqui --', ''));
+        textColumns.forEach(function (column) {
+            $('#var3Column').append(new Option(column, column, column == $('#var3Column').data('selectedValue'), column == $('#var3Column').data('selectedValue'))); // Adiciona as colunas do tipo Text
+        });
+
+        $('#var4Column').empty();
+        $('#var4Column').append(new Option('-- Selecione aqui --', ''));
+        textColumns.forEach(function (column) {
+            $('#var4Column').append(new Option(column, column, column == $('#var4Column').data('selectedValue'), column == $('#var4Column').data('selectedValue'))); // Adiciona as colunas do tipo Text
         });
     });
 
@@ -134,18 +170,24 @@ define([
         var selectedPhoneColumn = $('#phoneColumn').val();
         var selectedVar1Column = $('#var1Column').val();
         var selectedVar2Column = $('#var2Column').val();
+        var selectedVar3Column = $('#var3Column').val();
+        var selectedVar4Column = $('#var4Column').val();
         var messageTemplate = $('#messageTemplate').val();
         var apiKey = $('#apiKey').val();
         var phone = '{{Event.' + eventDefinitionKey + '.' + '"' + selectedPhoneColumn + '"' + '}}';
         var var1 = '{{Event.' + eventDefinitionKey + '.' + '"' + selectedVar1Column + '"' + '}}';
         var var2 = '{{Event.' + eventDefinitionKey + '.' + '"' + selectedVar2Column + '"' + '}}';
+        var var3 = '{{Event.' + eventDefinitionKey + '.' + '"' + selectedVar3Column + '"' + '}}';
+        var var4 = '{{Event.' + eventDefinitionKey + '.' + '"' + selectedVar4Column + '"' + '}}';
         payload['arguments'].execute.inArguments = [{
             "messageTemplate": messageTemplate,
             "apiKey": apiKey,
             "email": "{{InteractionDefaults.Email}}",
             "to": phone,
             "var1": var1,
-            "var2": var2
+            "var2": var2,
+            "var3": var3,
+            "var4": var4
         }];
 
         payload['metaData'].isConfigured = true;
